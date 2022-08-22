@@ -3,10 +3,12 @@ import { ThemeOptions } from '@mui/material/styles';
 declare module '@mui/material/styles' {
   interface Palette {
     alert: Palette['primary'];
+    gradients: Palette['primary'];
   }
 
   interface PaletteOptions {
     alert?: PaletteOptions['primary'];
+    gradient?: PaletteOptions['primary'];
   }
 }
 
@@ -29,6 +31,14 @@ const theme: ThemeOptions = {
       '700': '#9C162D',
       '800': '#6C1322',
       main: '#C3223D',
+    },
+    gradient: {
+      '100': 'linear-gradient(247.03deg, #22C9C3 -38.12%, #A5DF9F 100%);',
+      '200': 'linear-gradient(92.05deg, #9F5BD9 3.46%, #FFDA7A 93.15%);',
+      '300':
+        'linear-gradient(156.75deg, rgba(158, 250, 246, 0.2) 13.32%, rgba(253, 127, 128, 0.2) 84.09%), linear-gradient(280.54deg, #FD7F80 2.48%, #71BBB6 67.61%, #02EAE1 100%);',
+      '400':
+        'linear-gradient(238.82deg, rgba(158, 250, 246, 0.2) 28.01%, rgba(237, 101, 195, 0.2) 72.25%), linear-gradient(285.16deg, #02EAE1 0%, #85A0D0 37.67%, #9F5BD9 74.38%, #9F5BD9 97.87%);',
     },
     grey: {
       '100': '#F7F7F7',
