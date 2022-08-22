@@ -65,7 +65,7 @@
             }
         ],
         // Allows use of empty function mainly used for tests.
-        "@typescript-eslint/no-empty-function": "on",
+        "@typescript-eslint/no-empty-function": "1",
         // Allows use of any but should be avoided if possible.
         "@typescript-eslint/no-explicit-any": "off",
         // Allows use of "!" to indicate that a value is not null/undefined.
