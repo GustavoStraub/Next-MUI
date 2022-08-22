@@ -1,8 +1,10 @@
-import { Typography } from "@mui/material";
-import type { NextPage } from "next";
+import { Typography } from '@mui/material';
+import React from 'react';
 
-const Home: NextPage = () => {
-  return <Typography variant="h1">Zé</Typography>;
-};
-
-export default Home;
+export default function index() {
+  return (
+    <Typography variant="h5" color="primary.main">
+      Zézão
+    </Typography>
+  );
+}
