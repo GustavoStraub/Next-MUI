@@ -1,8 +1,8 @@
-import * as React from "react";
-import Document, { Html, Head, Main, NextScript } from "next/document";
-import createEmotionServer from "@emotion/server/create-instance";
+import createEmotionServer from '@emotion/server/create-instance';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
+import * as React from 'react';
 
-import createEmotionCache from "../utility/createEmotionCache";
+import createEmotionCache from '../utility/createEmotionCache';
 
 export default class MyDocument extends Document {
   render() {
@@ -10,14 +10,14 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link
-            rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel="stylesheet"
           />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link href="https://fonts.googleapis.com" rel="preconnect" />
           <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
             crossOrigin="true"
+            href="https://fonts.gstatic.com"
+            rel="preconnect"
           />
           <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -79,10 +79,10 @@ MyDocument.getInitialProps = async (ctx) => {
   const emotionStyles = extractCriticalToChunks(initialProps.html);
   const emotionStyleTags = emotionStyles.styles.map((style) => (
     <style
-      data-emotion={`${style.key} ${style.ids.join(" ")}`}
-      key={style.key}
-      // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: style.css }}
+      data-emotion={`${style.key} ${style.ids.join(' ')}`}
+      // eslint-disable-next-line react/no-danger
+      key={style.key}
     />
   ));
 

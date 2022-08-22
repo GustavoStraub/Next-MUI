@@ -4,7 +4,7 @@ import React from 'react';
 export default function index() {
   return (
     <>
-      <Typography variant="h5" color="test.test">
+      <Typography color="primary.500" variant="h5">
         Zézão
       </Typography>
     </>

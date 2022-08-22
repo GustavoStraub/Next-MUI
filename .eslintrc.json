@@ -5,7 +5,6 @@
         "@typescript-eslint",
         "import",
         "react",
-        "no-only-tests",
         "sort-keys-custom-order-fix"
     ],
     "extends": [
@@ -24,6 +23,12 @@
         "node": true
     },
     "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ],
         // Allow use of console.error.
         "no-console": [
             "warn",
@@ -65,7 +70,7 @@
             }
         ],
         // Allows use of empty function mainly used for tests.
-        "@typescript-eslint/no-empty-function": "1",
+        "@typescript-eslint/no-empty-function": 1,
         // Allows use of any but should be avoided if possible.
         "@typescript-eslint/no-explicit-any": "off",
         // Allows use of "!" to indicate that a value is not null/undefined.
@@ -79,72 +84,8 @@
                 "ignoreRestSiblings": true
             }
         ],
-        // https://github.com/import-js/eslint-plugin-import
-        // Forces custom import order via groups. Array is used to group imports together. Imports will also be separated by new lines for readability.
-        // Built-in are node imports such as fs, path, etc.  External are imports from node modules e.g. react, @mui, etc.
-        // Internal are non-relative imports from the project e.g. components, pages, etc.
-        // Parent, index, and sibling are relative imports e.g. "../Parent", ",", and "./Sibling".
-        // Type is for importing types from a module e.g. import type { SomeType } from "tools/types".
-        // We use custom path groups e.g. actions (grouped under internal) to separate and readability for the import.
-        "import/order": [
-            "error",
-            {
-                "alphabetize": {
-                    "caseInsensitive": true,
-                    "order": "asc"
-                },
-                "groups": [
-                    [
-                        "builtin",
-                        "external"
-                    ],
-                    "internal",
-                    [
-                        "parent",
-                        "index",
-                        "sibling"
-                    ],
-                    "type"
-                ],
-                "newlines-between": "always",
-                "pathGroups": [
-                    {
-                        "pattern": "{actions,actions/**}",
-                        "group": "internal",
-                        "position": "before"
-                    },
-                    {
-                        "pattern": "tools/constants/**",
-                        "group": "internal",
-                        "position": "before"
-                    },
-                    {
-                        "pattern": "{tools/urls,tools/urls/**}",
-                        "group": "internal",
-                        "position": "before"
-                    },
-                    {
-                        "pattern": "helpers/**",
-                        "group": "internal",
-                        "position": "before"
-                    },
-                    {
-                        "pattern": "components/**",
-                        "group": "internal",
-                        "position": "before"
-                    },
-                    {
-                        "pattern": "media/**",
-                        "group": "internal",
-                        "position": "after"
-                    }
-                ]
-            }
-        ],
         // Allows using media without needing captions.
         "jsx-a11y/media-has-caption": "off",
-        // Prevents using .only in tests.
-        "no-only-tests/no-only-tests": "error",
         // Avoids needing to specific display names for components.
         "react/display-name": "off",
         // Forces component props to be sorted, rest props are ignored.
